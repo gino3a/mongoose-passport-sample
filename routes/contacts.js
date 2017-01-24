@@ -4,12 +4,12 @@ var moment = require('moment');
 var Contact = require('../models/contacts');
 
 
-router.use(function(req, res, next) {
-  if (!req.user) {
-    res.redirect('/auth/login')
-  }
-  next();
-});
+// router.use(function(req, res, next) {
+//   if (!req.user) {
+//     res.redirect('/auth/login')
+//   }
+//   next();
+// });
 
 router.get('/', function(req, res) {
   Contact.find( function(err, contacts, count) {
