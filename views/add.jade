@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  .row
+    .col-md-6
+      h1 Add a contact
+      form(role="form", method="post", action="/contacts/")
+        include editform
+        button.btn.btn-primary(type="submit") Add user

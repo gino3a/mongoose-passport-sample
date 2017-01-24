@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  .row
+    .col-md-6
+      h1 Edit a contact
+      form(role="form", method="post", action="/contacts/#{contact.id}?_method=put")
+        include editform
+        button.btn.btn-primary(type="submit") Edit user
+
+    .col-md-6
+      h2 Notes
+      form(role="form", method="post", action="/contacts/#{contact.id}")
+        dl
+          if contact.notes
+            each note in contact.notes
+              dt= note.created
+              dd= note.note
+        
+        .form-group
+          label(for="notes")
+          textarea#notes.form-control(name="notes")
+
+        button.btn.btn-default(type="submit", value="addnote") Add note
