@@ -5,7 +5,6 @@ block content
   p Here is a list of your contacts.
   p
     a#delete.btn.btn-default(hrer="#") Delete
-    |  
     a#add.btn.btn-default(href="/contacts/add") Add new
   table.table
     thead
@@ -14,18 +13,4 @@ block content
         th Name
         th Nickname
         th Email
-    tbody
-      if !contacts.length
-        tr
-          td(colspan=4) You should add a contact
-      else
-        each contact in contacts
-          tr
-            td
-              input(type="checkbox", id=contact.id)
-            td
-              a(href="/contacts/#{contact.id}") #{contact.name}
-              |  #{contact.job}
-            td #{contact.nickname}
-            td
-              a(href="mailto:#{contact.email") #{contact.email}
+    tbody#table-body
